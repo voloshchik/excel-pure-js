@@ -1,0 +1,30 @@
+{
+  "name": "excel-pure",
+  "version": "1.0.0",
+  "description": "Pure Js Execel Application",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"webpack",
+    "build":"webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voloshchik/excel-pure-js.git"
+  },
+  "keywords": [
+    "js",
+    "excel"
+  ],
+  "author": "Vladimir Voloshchik <lovkiy2012@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voloshchik/excel-pure-js/issues"
+  },
+  "homepage": "https://github.com/voloshchik/excel-pure-js#readme",
+  "private": true,
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
