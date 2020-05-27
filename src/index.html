@@ -3,12 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.ico" />
     <title>Pure JavaScript Excel</title>
   </head>
   <body>
     <div id="app" class="container">
       <div class="excel">
-        <div class="excel__header"></div>
+        <div class="excel__header">
+          <input
+            class="input"
+            type="text"
+            name=""
+            id=""
+            value="Новая таблица"
+          />
+          <div>
+            <div class="button">
+              <i class="material-icons">delete</i>
+            </div>
+            <div class="button">
+              <i class="material-icons">exit_to_app</i>
+            </div>
+          </div>
+        </div>
+
         <div class="excel__toolbar"></div>
         <div class="excel__formula"></div>
         <div class="excel__table"></div>
