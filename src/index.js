@@ -1,2 +1,7 @@
 import './scss/index.scss'
-console.log('working')
+import {Excel} from './components/excel/Excel'
+
+const excel = new Excel('#app', {
+  components: [],
+})
+console.log('excel', excel)

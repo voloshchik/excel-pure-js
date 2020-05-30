@@ -7,7 +7,8 @@
   },
   "rules": {
     "semi": "off",
-    "require-jsdoc":"off"
+    "require-jsdoc":"off",
+    "space-before-blocks":"off"
   },
   "extends": ["eslint:recommended", "google"]
 }
