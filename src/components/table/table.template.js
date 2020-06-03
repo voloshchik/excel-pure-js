@@ -33,7 +33,7 @@ export function createTable(rowsCount = 15) {
   const collsCount = CODES.Z - CODES.A + 1
   const rows = []
   const cols = new Array(collsCount).fill('').map(toChar).map(toColumn).join('')
-  console.log('colls', cols)
+
   rows.push(createRow(null, cols))
   for (let i = 0; i < rowsCount; i++) {
     const cells = new Array(collsCount).fill('').map(toCell).join('')
