@@ -15,6 +15,9 @@
     height: $row-height;
   }
   .row-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-width: $info-cell-with;
     height: 100%;
     border: 1px solid $border-color;
