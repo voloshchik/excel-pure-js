@@ -44,6 +44,7 @@ class Dom {
   findAll(selector) {
     return this.$el.querySelectorAll(selector)
   }
+  scc(style = {}) {}
 }
 
 export function $(selector) {

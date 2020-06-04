@@ -19,14 +19,21 @@ export class Table extends ExcelComponent {
 
       const coords = $parent.getCoords()
       const cells = this.$root.findAll(`[data-col="${$parent.data.col}"]`)
-      console.log('$parent.data  :>> ', $parent.data.col)
+      const type = $resizer.data.resize
+      console.log('type  :>> ', type)
       document.onmousemove = (e) => {
-        const delta = e.pageX - coords.right
-        const value = coords.width + delta
-        $parent.$el.style.width = value + 'px'
-        cells.forEach((el) => (el.style.width = value + 'px'))
-
-        // console.log('delta :>> ', delta)
+        console.log('onmousemove :>> ')
+        if (type === 'col') {
+          const delta = e.pageX - coords.right
+          const value = coords.width + delta
+          $parent.$el.style.width = value + 'px'
+          cells.forEach((el) => (el.style.width = value + 'px'))
+        } else {
+          const delta = e.pageY - coords.bottom
+          const value = coords.height + delta
+          $parent.$el.style.height = value + 'px'
+          console.log('delta :>> ', delta)
+        }
       }
       document.onmouseup = () => {
         document.onmousemove = null
