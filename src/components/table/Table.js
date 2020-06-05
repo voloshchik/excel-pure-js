@@ -22,16 +22,17 @@ export class Table extends ExcelComponent {
       const type = $resizer.data.resize
       console.log('type  :>> ', type)
       document.onmousemove = (e) => {
-        console.log('onmousemove :>> ')
         if (type === 'col') {
           const delta = e.pageX - coords.right
           const value = coords.width + delta
-          $parent.$el.style.width = value + 'px'
+          $parent.css({width: value + 'px'})
+          // $parent.$el.style.width = value + 'px'
           cells.forEach((el) => (el.style.width = value + 'px'))
         } else {
           const delta = e.pageY - coords.bottom
           const value = coords.height + delta
-          $parent.$el.style.height = value + 'px'
+          $parent.css({height: value + 'px'})
+          // $parent.$el.style.height = value + 'px'
           console.log('delta :>> ', delta)
         }
       }
