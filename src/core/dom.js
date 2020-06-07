@@ -63,6 +63,10 @@ class Dom {
   removeClass(className) {
     return this.$el.classList.remove(className)
   }
+  focus() {
+    this.$el.focus()
+    return this
+  }
   css(styles = {}) {
     Object.keys(styles).forEach((key) => {
       this.$el.style[key] = styles[key]
