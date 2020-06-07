@@ -10,7 +10,7 @@ export class DomListener {
   initDOMListeners() {
     this.listeners.forEach((listener) => {
       const method = getMethodName(listener)
-      console.log('method', method)
+
       if (!this[method]) {
         throw new Error(
           `Method ${method} is not implements ${this.name || ''} Component`
