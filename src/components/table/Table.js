@@ -31,6 +31,9 @@ export class Table extends ExcelComponent {
     this.$on('formula:done', () => {
       this.selection.current.focus()
     })
+    this.$subscribe((state) => {
+      console.log('tableState', state)
+    })
   }
   selectCell($cell) {
     this.selection.select($cell)
@@ -47,7 +50,7 @@ export class Table extends ExcelComponent {
         )
         this.selection.selectGroup($cells)
       } else {
-        this.selection.select($target)
+        this.selectCell($target)
       }
     }
   }

@@ -22,6 +22,9 @@ export class Formula extends ExcelComponent {
     this.$on('table:input', ($cell) => {
       this.formula.text($cell.text())
     })
+    this.$subscribe((state) => {
+      console.log('formulaState', state)
+    })
   }
   onInput(event) {
     // const text = event.target.textContent.trim()
