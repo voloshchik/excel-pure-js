@@ -42,15 +42,12 @@ export class Table extends ExcelComponent {
     } else if (isCell(event)) {
       const $target = $(event.target)
       if (event.shiftKey) {
-        // const target = $target.id(true)
-        // const current = this.selection.current.id(true)
         const $cells = matrix($target, this.selection.current).map((id) =>
           this.$root.find(`[data-id="${id}"]`)
         )
         this.selection.selectGroup($cells)
       } else {
         this.selection.select($target)
-        console.log('event.target :>> ', event)
       }
     }
   }
