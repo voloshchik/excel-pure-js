@@ -5,6 +5,8 @@ import {resizeHandler} from './table.resize'
 import {shouldResize, isCell, matrix, nextSelector} from './table.functions'
 import {TableSelection} from './TableSelection'
 
+import * as actions from '../../redux/action'
+
 export class Table extends ExcelComponent {
   constructor($root, options) {
     super($root, {
@@ -43,7 +45,7 @@ export class Table extends ExcelComponent {
   async resizeTable(event) {
     try {
       const data = await resizeHandler(this.$root, event)
-      this.$dispatch({type: 'TABLE_RESIZE', data})
+      this.$dispatch(actions.tableResize(data))
 
       // console.log('data resize', data)
     } catch (error) {
