@@ -17,7 +17,7 @@ export class Table extends ExcelComponent {
   }
   static className = 'excel__table'
   toHTML() {
-    return createTable()
+    return createTable(20, this.store.getState())
   }
   prepare() {
     this.selection = new TableSelection()
