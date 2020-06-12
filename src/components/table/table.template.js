@@ -18,7 +18,7 @@ function toCell(state, row) {
     const width = getWidth(state.colState, col)
 
     const data = state.dataState[id]
-    console.log('object', object)
+
     return `
     <div 
     class="cell" 
