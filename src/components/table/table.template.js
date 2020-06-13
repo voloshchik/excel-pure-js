@@ -76,7 +76,6 @@ function withWidthFrom(state) {
 }
 
 export function createTable(rowsCount = 15, state = {}) {
-  console.log('state', state)
   const collsCount = CODES.Z - CODES.A + 1
   const rows = []
   const cols = new Array(collsCount)
