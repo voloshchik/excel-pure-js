@@ -15,12 +15,16 @@ function toButton(button) {
   </div>`
 }
 
-export function createToolbar() {
+export function createToolbar(state) {
   const button = [
     {icon: 'format_align_left', active: false, value: {textAlign: 'left'}},
     {icon: 'format_align_center', active: false, value: {textAlign: 'center'}},
     {icon: 'format_align_right', active: false, value: {textAlign: 'right'}},
-    {icon: 'format_bold', active: false, value: {fontWeight: 'bold'}},
+    {
+      icon: 'format_bold',
+      active: state['fontWeight'] === 'bold',
+      value: {fontWeight: state['fontWeight'] === 'bold' ? 'normal' : 'bold'},
+    },
     {icon: 'format_italic', active: false, value: {fontStyle: 'italic'}},
     {
       icon: 'format_underlined',
