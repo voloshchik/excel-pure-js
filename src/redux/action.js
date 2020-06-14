@@ -1,4 +1,4 @@
-import {TABLE_RESIZE, CHANGE_TEXT} from './type'
+import {TABLE_RESIZE, CHANGE_TEXT, CHANGE_STYLES} from './type'
 
 export function tableResize(data) {
   return {
@@ -12,4 +12,8 @@ export function changeText(data) {
     type: CHANGE_TEXT,
     data,
   }
+}
+
+export function changeStyles(data) {
+  return {type: CHANGE_STYLES, data}
 }

@@ -20,6 +20,7 @@ export class ExcelComponent extends DomListener {
   init() {
     this.initDOMListeners()
   }
+  // Сюда приходят только изменения по тем полям, на которые мы подписались
   storeChanged() {}
 
   isWatching(key) {
