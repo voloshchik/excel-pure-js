@@ -36,9 +36,15 @@ export class Table extends ExcelComponent {
       this.selection.current.focus()
     })
 
-    this.$on('toolbar:applyStyle', (style) => {
-      console.log('tableStelefromToolbar', style)
-      this.selection.applyStyle(style)
+    this.$on('toolbar:applyStyle', (value) => {
+      console.log('tableStelefromToolbar', value)
+      this.selection.applyStyle(value)
+      this.$dispatch(
+        actions.applyStyle({
+          value,
+          ids: this.selection.selectedIds,
+        })
+      )
     })
     // this.$subscribe((state) => {
     //   console.log('tableState', state)
