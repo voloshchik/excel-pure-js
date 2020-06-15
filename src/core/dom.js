@@ -11,7 +11,7 @@ class Dom {
     return this.$el.outerHTML.trim()
   }
   text(text) {
-    if (typeof text === 'string') {
+    if (typeof text !== 'undefined') {
       this.$el.textContent = text
       return this
     }
