@@ -9,8 +9,13 @@ import './scss/index.scss'
 // import {storage, debounce} from './core/utils'
 // import {initialState} from './redux/initialState'
 import {Router} from './core/routes/Router'
+import {DashboardPage} from './pages/DashboardPage'
+import {ExcelPage} from './pages/ExcelPage'
 
-new Router('#app', {})
+new Router('#app', {
+  dashboard: DashboardPage,
+  excel: ExcelPage,
+})
 
 // const store = createStore(rootReducer, initialState)
 // const stateListeners = debounce((state) => {
