@@ -10,6 +10,7 @@ import {Formula} from '../components/formula/Formula'
 import {Table} from '../components/table/Table'
 export class ExcelPage extends Page {
   getRoot() {
+    console.log('this.params', this.params)
     const store = createStore(rootReducer, initialState)
     const stateListeners = debounce((state) => {
       storage('excel-state', state)
@@ -29,6 +30,6 @@ export class ExcelPage extends Page {
     this.excel.init()
   }
   destroy() {
-    this.destroy()
+    this.excel.destroy()
   }
 }
