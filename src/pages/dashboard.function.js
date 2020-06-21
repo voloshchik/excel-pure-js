@@ -3,13 +3,13 @@ export function toHTML(key) {
   const model = storage(key)
   const id = key.split(':')[1]
   return `
-            <li class="db__record">
-                <a href="#excel/${id}">${model.title}</a>
-                <strong>
-        ${new Date(model.openedDate).toLocaleDateString()}
-        ${new Date(model.openedDate).toLocaleTimeString()}
-      </strong> 
-            </li>`
+      <li class="db__record">
+         <a href="#excel/${id}">${model.title}</a>
+            <strong>
+              ${new Date(model.openedDate).toLocaleDateString()}
+              ${new Date(model.openedDate).toLocaleTimeString()}
+            </strong> 
+      </li>`
 }
 
 function getAllKeys() {
@@ -27,7 +27,7 @@ function getAllKeys() {
 
 export function createRecordsTable() {
   const keys = getAllKeys()
-  console.log('keys', keys)
+
   if (!keys.length) {
     return `<p>Вы пока не создали ни одной таблицы</p>`
   }

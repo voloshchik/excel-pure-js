@@ -15,7 +15,6 @@ export function tableResize(data) {
 }
 
 export function updateDate() {
-  debugger
   return {type: UPDATE_DATE}
 }
 export function changeText(data) {
