@@ -13,8 +13,11 @@ const reducer = (state = initialState, action) => {
 
 describe('createStore:', () => {
   let store
+  let handler
+
   beforeEach(() => {
     store = createStore(reducer, initialState)
+    handler = jest.fn()
   })
   test('should return obj', () => {
     expect(store).toBeDefined()
@@ -28,12 +31,38 @@ describe('createStore:', () => {
   test('should return default state', () => {
     expect(store.getState()).toEqual(initialState)
   })
-  test('shuld change state if action exist', () => {
+  test('should change state if action exist', () => {
     store.dispatch({type: 'ADD'})
     expect(store.getState().count).toBe(1)
   })
-  test('shuld  not change state if dont action exist', () => {
+  test('should  not change state if dont action exist', () => {
     store.dispatch({type: 'NOT_EXESTING_ACTON'})
     expect(store.getState().count).toBe(0)
+  })
+  test('should call subscriber function', () => {
+    store.subscribe(handler)
+
+    store.dispatch({type: 'ADD'})
+
+    expect(handler).toHaveBeenCalled()
+    expect(handler).toHaveBeenCalledWith(store.getState())
+  })
+  test('should NOT call sub if unSubscribe', () => {
+    const sub = store.subscribe(handler)
+    sub.unsubscribe()
+    store.dispatch({type: 'ADD'})
+
+    expect(handler).not.toHaveBeenCalled()
+  })
+  test('should dispatch in async way', () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        store.dispatch({type: 'ADD'})
+      }, 500)
+      setTimeout(() => {
+        expect(store.getState().count).toBe(1)
+        resolve()
+      }, 1000)
+    })
   })
 })

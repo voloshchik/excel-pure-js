@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "@types/jest": "^26.0.3",
     "eslint-plugin-jest": "^23.17.1",
     "normalize.css": "^8.0.1"
   }

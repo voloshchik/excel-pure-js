@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-        "target": "es6"
-    },
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "target": "es6"
+  },
+  "typeAcquisition": {
+    "include": ["jest"]
+  },
+  "exclude": ["node_modules"]
 }
