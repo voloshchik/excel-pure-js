@@ -1,7 +1,6 @@
 import {Router} from './Router'
-import {Page} from '../Page'
-import {$} from '../dom'
-import {directive} from '../../../../../../.cache/typescript/3.9/node_modules/@babel/types/lib/index'
+import {Page} from '../page/Page'
+
 class DashboardPage extends Page {
   getRoot() {
     const root = document.createElement('div')
